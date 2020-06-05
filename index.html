@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="sr">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Modak" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- bootstrap slider -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
+    
+    <!-- d3 -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap.css">
+    <link rel="stylesheet" href="vendor/algo.css">
+    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <title>Algo</title>
+  </head>
+  <body>
+    <div class="mainbar container" id="app">
+    <!-- navs -->
+      <div class="container">
+            <div class="header bg-danger">
+                <div class="container">
+                    <h1 class="display-1">Algorithm Visualizations</h1>
+                    <p class="lead">practice project</p>
+                </div>
+            </div>
+            <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
+                <a class="nav-link active" href="#pocetna" data-toggle="tab">Sorting Algorithms</a>
+            </nav>
+          <div class="tab-content">
+            <div class="tab-pane active" id="pocetna"> <!-- Sorting section-->
+              <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
+                <a class="nav-link" href="#bubble" data-toggle="tab">Bubble</a>
+                <a class="nav-link" href="#selection" data-toggle="tab">Selection</a>
+                <a class="nav-link" href="#insertion" data-toggle="tab">Insertion</a>
+                <a class="nav-link" href="#quick" data-toggle="tab">Quick</a>
+                <a class="nav-link" href="#merge" data-toggle="tab">Merge</a>
+              </nav>              
+              <div class="tab-content">
+                <div class="tab-pane fade" id="bubble">
+                  <div class="sortDefinition1">
+                    <p>Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.</p>
+                    <img height="380vh" src="img/bubbleSort.png">
+                  </div>
+                  <button type="button" class="btn btn-danger" onclick="bubbleSort()">Sort =></button>
+                </div>
+                <div class="tab-pane fade" id="selection">
+                  <div class="sortDefinition1">
+                    <p>The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array.
+
+                      1) The subarray which is already sorted.
+                      2) Remaining subarray which is unsorted.
+                      
+                      In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray.</p>
+                    <img height="380vh" src="img/selectionSort.png">
+                  </div> 
+                    <button type="button" class="btn btn-danger" onclick="selectionSort()">Start =></button>
+                </div>
+                <div class="tab-pane fade" id="insertion">
+                  <div class="sortDefinition1">
+                    <p>Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands.</p>
+                    <img height="380vh" src="img/insertionSort.png">
+                  </div> 
+                  <button type="button" class="btn btn-danger" onclick="insertionSort()">Start =></button>
+                </div>                
+                <div class="tab-pane fade" id="quick">
+                  <div class="sortDefinition1">
+                  <p>QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways.
+
+                    Always pick first element as pivot.
+                    Always pick last element as pivot.
+                    Pick a random element as pivot.
+                    Pick median as pivot (implemented below).
+                    The key process in quickSort is partition(). Target of partitions is, given an array and an element x of array as pivot, put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x. All this should be done in linear time.</p>
+                    <img height="380vh" src="img/QuickSort.png">
+                  </div>
+                    <button type="button" class="btn btn-danger" onclick="quickSortBtn()">Start =></button>
+                </div>
+                <div class="tab-pane fade" id="merge">
+                  <div class="sortDefinition1">
+
+                  <p>Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.</p>
+                  <img height="380vh" src="img/mergeSort.png">  
+                </div>
+                  <button type="button" class="btn btn-danger" onclick="mergeSortBtn()">Start =></button>
+                </div>
+              </div><!-- Sorting section end-->
+            </div>
+            <div class="tab-pane fade" id="nestoDrugo">
+              <h1>ovde srcovi</h1>
+            </div>
+          </div>
+          <svg id="svg"></svg>
+        <div class="footer1">
+            <div class="card text-center">
+              <div class="controls">
+                <div class="reRandom">
+                  <button class ="btn btn-danger" onclick="reRandomArr()">
+                    <i class="fas fa-dice"></i> <br/>ReRandom Array</button>
+                </div>
+                <div class="speed">
+                  <input id="ex12a" type="text"/>
+                  <span id="ex6CurrentSliderValLabel" class ="btn btn-danger">
+                    <i class="fas fa-tachometer-alt"></i>  Speed: <span id="ex6SliderVal">3</span></span>
+                </div>
+                <div class="arrSize">
+                  <div class ="btn btn-danger arrSize1">
+                    <span id="ex6CurrentSliderValLabel"><i class="fas fa-expand-alt"></i>  Size: </span>
+                  </div>  
+                  <select class="btn btn-danger" id="arraySize">
+                    <option>5</option>
+                    <option selected>10</option>
+                    <option>20</option>
+                    <option>30</option>
+                  </select>                
+                </div>
+              </div>
+              <div class="card-footer text-muted">
+                controls
+              </div>
+            </div>
+        </div><!-- end.footer-->
+      </div><!-- end. main cont-->
+  </div><!-- end .mainbar-->
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+  </body>
+</html>
