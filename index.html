@@ -32,7 +32,7 @@
                 </div>
             </div>
             <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
-                <a class="nav-link active" href="#pocetna" data-toggle="tab">Sorting Algorithms</a>
+                <a class="nav-link active headBtn" href="#pocetna" data-toggle="tab">Sorting Algorithms</a>
             </nav>
           <div class="tab-content">
             <div class="tab-pane active" id="pocetna"> <!-- Sorting section-->
@@ -47,7 +47,7 @@
                 <div class="tab-pane fade" id="bubble">
                   <div class="sortDefinition1">
                     <p>Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.</p>
-                    <img height="380vh" src="img/bubbleSort.png">
+                    <img height="250vw" src="img/bubbleSort.png">
                   </div>
                   <button type="button" class="btn btn-danger" onclick="bubbleSort()">Sort =></button>
                 </div>
@@ -59,14 +59,14 @@
                       2) Remaining subarray which is unsorted.
                       
                       In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray.</p>
-                    <img height="380vh" src="img/selectionSort.png">
+                    <img height="250vw" src="img/selectionSort.png">
                   </div> 
                     <button type="button" class="btn btn-danger" onclick="selectionSort()">Start =></button>
                 </div>
                 <div class="tab-pane fade" id="insertion">
                   <div class="sortDefinition1">
                     <p>Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands.</p>
-                    <img height="380vh" src="img/insertionSort.png">
+                    <img width="250vw" src="img/insertionSort.png">
                   </div> 
                   <button type="button" class="btn btn-danger" onclick="insertionSort()">Start =></button>
                 </div>                
@@ -79,7 +79,7 @@
                     Pick a random element as pivot.
                     Pick median as pivot (implemented below).
                     The key process in quickSort is partition(). Target of partitions is, given an array and an element x of array as pivot, put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x. All this should be done in linear time.</p>
-                    <img height="380vh" src="img/QuickSort.png">
+                    <img height="250vw" src="img/QuickSort.png">
                   </div>
                     <button type="button" class="btn btn-danger" onclick="quickSortBtn()">Start =></button>
                 </div>
@@ -87,7 +87,7 @@
                   <div class="sortDefinition1">
 
                   <p>Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.</p>
-                  <img height="380vh" src="img/mergeSort.png">  
+                  <img height="250vw" src="img/mergeSort.png">  
                 </div>
                   <button type="button" class="btn btn-danger" onclick="mergeSortBtn()">Start =></button>
                 </div>
@@ -99,8 +99,8 @@
           </div>
           <svg id="svg"></svg>
         <div class="footer1">
-            <div class="card text-center">
-              <div class="controls">
+            <div class="card text-center controlsContainer">
+              <div class="controls nav-pills flex-column flex-md-row">
                 <div class="reRandom">
                   <button class ="btn btn-danger" onclick="reRandomArr()">
                     <i class="fas fa-dice"></i> <br/>ReRandom Array</button>

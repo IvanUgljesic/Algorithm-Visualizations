@@ -34,13 +34,21 @@ svg {
   border: 2px solid orange;
   border-radius: 5%;
 }
+
+.controlsContainer{
+  margin-bottom: auto;
+  margin-top: auto;
+
+}
+
  .controls{
    padding: 2vh;
    display: flex;
    align-items: center;
-   justify-content: space-around;
+   justify-content: space-between;
  }
  .speed{
+  margin-top: 2vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -53,6 +61,7 @@ svg {
   background: #99FF99;
 }
 .arrSize{
+  margin-top: 2vh;
   max-height: 4vh;
   display: flex;
   flex-direction: row;
@@ -60,6 +69,10 @@ svg {
 }
 .arrSize1{
   margin-right: 2px;
+}
+
+.headBtn{
+  text-align: center;
 }
 
 
